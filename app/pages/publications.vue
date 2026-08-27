@@ -7,7 +7,7 @@ const { representativePublications, otherPublications } = useContent()
 const { t } = useLocale()
 
 useSeoMeta({
-  title: () => `Publications | ${site.title}`,
+  title: () => `${t('pub.title')} | ${t('site.name')}`,
   description: site.description,
 })
 </script>

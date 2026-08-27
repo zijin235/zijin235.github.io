@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { author, site } from '~/data/site'
-import { useContent } from '~/composables/useContent'
+
 import { useLocale } from '~/composables/useLocale'
+import { site } from '~/data/site'
 
 const { education, honors, internships, researchInterests, representativePublications, otherPublications } = useContent()
 const { t } = useLocale()
@@ -10,7 +10,7 @@ const { t } = useLocale()
 const pubs = computed(() => [...representativePublications.value, ...otherPublications])
 
 useSeoMeta({
-  title: () => `${t('nav.cv')} | ${site.title}`,
+  title: () => `${t('nav.cv')} | ${t('site.name')}`,
   description: site.description,
 })
 </script>
@@ -20,7 +20,7 @@ useSeoMeta({
     <section class="page__content">
       <h1 class="page__title">{{ t('nav.cv') }}</h1>
       <p class="pub-page-intro">
-        <strong>{{ author.name }}</strong> — {{ t('site.bio') }} · {{ t('site.employer') }}
+        <strong>{{ t('site.name') }}</strong> — {{ t('site.bio') }} · {{ t('site.employer') }}
       </p>
 
       <!-- Education -->

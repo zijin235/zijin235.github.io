@@ -8,8 +8,8 @@ export const messages: Record<Locale, Record<string, string>> = {
     'nav.internships': 'Internships',
     'nav.cv': 'CV',
 
+    'site.name': 'Cheng Wei',
     'site.bio': 'M.S. Student · NUAA',
-    'site.description': 'Research interests: AI Security and Agent Security',
     'site.location': 'Nanjing, China',
     'site.employer': 'College of Computer Science and Technology / School of Software',
 
@@ -40,8 +40,8 @@ export const messages: Record<Locale, Record<string, string>> = {
     'nav.internships': '实习',
     'nav.cv': '简历',
 
+    'site.name': '程伟',
     'site.bio': '硕士研究生 · 南航',
-    'site.description': '研究方向：AI 安全与 Agent 安全',
     'site.location': '南京, 中国',
     'site.employer': '计算机科学与技术学院/软件学院',
 

@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import type { NavigationMenuItem } from '@nuxt/ui'
-import { site } from '~/data/site'
 import { useLocale } from '~/composables/useLocale'
 
 const { t, locale, toggleLocale } = useLocale()
@@ -21,8 +20,8 @@ const items = computed<NavigationMenuItem[]>(() => [
   -->
   <UHeader :ui="{ root: 'bg-white border-b border-muted' }">
     <template #left>
-      <ULink to="/" :aria-label="site.title" class="font-bold text-default">
-        {{ site.title }}
+      <ULink to="/" :aria-label="t('site.name')" class="font-bold text-default">
+        {{ t('site.name') }}
       </ULink>
     </template>
 

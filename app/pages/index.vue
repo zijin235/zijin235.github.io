@@ -5,15 +5,14 @@ import { useLocale } from '~/composables/useLocale'
 
 const { about, education, honors, internships, news, representativePublications, researchInterests } = useContent()
 const { t } = useLocale()
-
 // 对应旧站 head.html 的 SEO meta（完整描述仅在此出现一次，避免侧栏重复）
 const seoDescription =
   'M.S. student in AI Security and Agent Security at the College of Computer Science and Technology / School of Software, Nanjing University of Aeronautics and Astronautics.'
 
 useSeoMeta({
-  title: () => site.title,
+  title: () => t('site.name'),
   description: seoDescription,
-  ogTitle: () => site.title,
+  ogTitle: () => t('site.name'),
   ogDescription: seoDescription,
 })
 </script>
@@ -25,11 +24,11 @@ useSeoMeta({
       <span class="anchor" id="about-me" />
       <p v-for="(t, i) in about" :key="i" v-html="t" />
 
-      <!-- ===== Research Interests ===== -->
+      <!-- ===== Research Interests（主页简写，只列方向名） ===== -->
       <SectionTitle id="research-interests" icon="🔬" :title="t('section.researchInterests')" />
       <ul class="research-interests">
         <li v-for="r in researchInterests" :key="r.title">
-          <strong>{{ r.title }}</strong> — {{ r.description }}
+          <strong>{{ r.title }}</strong>
         </li>
       </ul>
 

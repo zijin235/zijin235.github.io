@@ -7,7 +7,7 @@ const { internships } = useContent()
 const { t } = useLocale()
 
 useSeoMeta({
-  title: () => `${t('intern.title')} | ${site.title}`,
+  title: () => `${t('intern.title')} | ${t('site.name')}`,
   description: site.description,
 })
 </script>
