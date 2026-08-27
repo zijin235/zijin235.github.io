@@ -116,6 +116,20 @@ export const otherPublications: Publication[] = [
     links: [{ label: 'Paper', url: 'https://doi.org/10.1145/3735636' }],
   },
   {
+    title: 'Insecure Coding Preferences in Long-Term Memory: Security Risks for LLM-based Code Generation',
+    authors: 'Yuchen Chen, **Wei Cheng**, Yuan Xiao, Zhou Yang, Weifeng Sun, Chunrong Fang, Xiang Chen, Baowen Xu, David Lo, Zhenyu Chen',
+    venue: 'ISSTA 2026',
+    venueDetail: 'In Proceedings of the ACM SIGSOFT International Symposium on Software Testing and Analysis (ISSTA), 2026.',
+    ccf: 'CCF A',
+  },
+  {
+    title: 'Breaking Customized LLMs for Coding: Automated Red Teaming for Instruction Backdoor Attacks',
+    authors: 'Yuchen Chen, **Wei Cheng**, Yuan Xiao, Weisong Sun, Chunrong Fang, Yang Liu, Zhenyu Chen, Baowen Xu',
+    venue: 'ASE 2026',
+    venueDetail: 'In Proceedings of the 41st IEEE/ACM International Conference on Automated Software Engineering (ASE), 2026.',
+    ccf: 'CCF A',
+  },
+  {
     title: 'Less is More: Towards Green Code Large Language Models via Unified Structural Pruning',
     authors: 'Guang Yang, Yu Zhou, Xiangyu Zhang, **Wei Cheng**, Ke Liu, Xiang Chen, Terry Yue Zhuo, Taolue Chen',
     venue: 'IP&M 2026',
@@ -159,12 +173,18 @@ export const educationZh: TimelineEntry[] = [
   { date: '2020.09 - 2024.06', text: '南通大学 信息科学技术学院，软件工程学士' },
 ]
 
-/** 💻 Internships */
+/** 💻 Internships（来自个人简历：中国电科 28 所） */
 export const internships: TimelineEntry[] = [
-  { date: '2019.05 - 2020.02', text: 'Lorem ipsum dolor sit amet.', links: [{ label: 'Lorem', url: 'https://github.com/' }] },
+  {
+    date: '2025.12 - 2026.07',
+    text: 'Smart Application Group, The 28th Research Institute of China Electronics Technology Group Corporation (CETC 28) — multi-agent cooperative decision-making and action-planning research; designed and implemented a multi-agent reinforcement learning framework with cooperative training, developed an intelligent agent application (~90% action-planning accuracy).',
+  },
 ]
 
 // ---- 中文版 ----
 export const internshipsZh: TimelineEntry[] = [
-  { date: '2019.05 - 2020.02', text: '（示例实习，待更新）' },
+  {
+    date: '2025.12 - 2026.07',
+    text: '中国电子科技集团第二十八研究所（智能应用方向）——面向智能体应用开展多智能体协同决策与行动规划研究；负责多智能体强化学习框架的设计与实现，构建高效协同训练机制，开发智能应用系统（行动规划准确率约 90%）。',
+  },
 ]
