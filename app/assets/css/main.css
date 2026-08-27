@@ -1,0 +1,282 @@
+/* ==========================================================================
+   基于 Nuxt UI v4 的样式
+   - @theme: 品牌色阶 + 字体（与 Jekyll 原版一致的 Trebuchet MS 栈）
+   - :root: 圆角 3px、容器 1160px、顶栏 56px、主色钉死 #224b8d
+   - 自定义布局样式仅保留 Nuxt UI 没有对应组件的部分（paper-box / timeline 等）
+   ========================================================================== */
+
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+@theme static {
+  --font-sans: 'Trebuchet MS', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+  /* 原站点主色 #224b8d 的完整色阶 */
+  --color-brand-50: #eef2fb;
+  --color-brand-100: #dce4f6;
+  --color-brand-200: #b9c8ea;
+  --color-brand-300: #93a7db;
+  --color-brand-400: #6a85c6;
+  --color-brand-500: #4a69b1;
+  --color-brand-600: #35579f;
+  --color-brand-700: #224b8d;
+  --color-brand-800: #1c3d75;
+  --color-brand-900: #16305c;
+  --color-brand-950: #0e2142;
+}
+
+:root {
+  /* 与原版一致的全局尺寸 */
+  --ui-radius: 3px;
+  --ui-container: 72.5rem; /* 1160px */
+  --ui-header-height: 3.5rem; /* 56px */
+
+  /* Nuxt UI 主色默认取 500 档，这里钉到 700 档 = 原站 #224b8d */
+  --ui-primary: var(--ui-color-primary-700);
+
+  /* 原版文字/边框色（保持不变） */
+  --text: #494e52;
+  --text-light: #7a8288;
+  --border: #f2f3f3;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth; /* 替代 jQuery smooth-scroll */
+  scroll-padding-top: 4.2em; /* 锚点滚动时避开 sticky 顶栏 */
+}
+
+body {
+  margin: 0;
+  font-family: 'Trebuchet MS', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text);
+  background: #fff;
+}
+
+a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+p {
+  margin: 0.6em 0;
+}
+
+/* ---------------- 布局：侧栏 + 内容（与原版一致） ---------------- */
+.page__layout {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 2em 1em 1em;
+  display: grid;
+  grid-template-columns: 275px 1fr;
+  gap: 3em;
+  align-items: start;
+}
+
+.sidebar {
+  position: sticky; /* 原生 sticky */
+  top: 76px;
+}
+
+.page__content {
+  min-width: 0;
+}
+
+/* ---------------- 作者信息（侧栏） ---------------- */
+.profile_box {
+  display: flex;
+  flex-direction: column;
+}
+
+.author__avatar img {
+  max-width: 175px;
+  min-width: 90px;
+  border: 1px solid var(--border);
+  padding: 5px;
+  border-radius: 50%;
+}
+
+.author__name {
+  margin: 0.6em 0 0.1em;
+  font-size: 1.25em;
+  color: var(--text);
+}
+
+.author__bio {
+  color: var(--text-light);
+  margin: 0 0 1em;
+}
+
+.author__urls {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.author__urls li {
+  padding: 0.18em 0;
+  font-size: 0.92em;
+}
+
+.author__urls .author__desc {
+  white-space: normal;
+  margin-bottom: 0.8em;
+  color: var(--text-light);
+}
+
+.author__urls .citations {
+  margin-top: 0.8em;
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+  flex-wrap: wrap;
+  font-size: 0.92em;
+}
+
+.author__urls .citations img {
+  height: 20px;
+}
+
+/* ---------------- 章节标题 ---------------- */
+.section-title {
+  margin: 2em 0 0.5em;
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+}
+
+.anchor {
+  display: block;
+  position: relative;
+  top: -70px;
+  visibility: hidden;
+}
+
+/* ---------------- 时间线（news/honors/education/talks/internships） ---------------- */
+.timeline {
+  list-style: none;
+  padding: 0;
+  margin: 0.5em 0 1.5em;
+}
+
+.timeline li {
+  margin: 0.5em 0;
+  line-height: 1.65;
+}
+
+.tl-date {
+  color: var(--text);
+  font-weight: 700;
+  margin-right: 0.6em;
+  white-space: nowrap;
+}
+
+.tl-link {
+  margin-left: 0.5em;
+}
+
+/* ---------------- 出版物 ---------------- */
+.paper-box {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #efefef;
+  padding: 2em 0;
+}
+
+.paper-box-image {
+  justify-content: center;
+  display: flex;
+  width: 100%;
+  order: 2;
+}
+
+.paper-box-image img {
+  max-width: 400px;
+  box-shadow: 3px 3px 6px #888;
+  object-fit: cover;
+}
+
+.paper-box-text {
+  max-width: 100%;
+  order: 1;
+}
+
+.pub-title {
+  margin: 0.2em 0 0.4em;
+  font-size: 1.1em;
+}
+
+.pub-authors {
+  color: var(--text-light);
+  margin: 0.3em 0;
+}
+
+.pub-desc {
+  color: var(--text-light);
+}
+
+.pub-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.8em 0 1.5em;
+}
+
+.pub-list li {
+  margin: 0.6em 0;
+  line-height: 1.6;
+}
+
+.show_paper_citations {
+  margin-left: 0.5em;
+}
+
+/* ---------------- 响应式（与原版一致） ---------------- */
+@media (min-width: 768px) {
+  .paper-box-image {
+    justify-content: left;
+    min-width: 200px;
+    max-width: 40%;
+    order: 1;
+  }
+
+  .paper-box-text {
+    justify-content: left;
+    padding-left: 2em;
+    max-width: 60%;
+    order: 2;
+  }
+}
+
+@media (max-width: 900px) {
+  .page__layout {
+    grid-template-columns: 1fr;
+    gap: 1.5em;
+  }
+
+  .sidebar {
+    position: static;
+  }
+
+  .profile_box {
+    flex-direction: row;
+    align-items: center;
+    gap: 1em;
+  }
+
+  .author__avatar img {
+    max-width: 90px;
+    min-width: 90px;
+  }
+}

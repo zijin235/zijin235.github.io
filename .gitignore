@@ -1,3 +1,6 @@
-_site/
-push.sh
+node_modules
+.nuxt
+.output
+.data
+dist
 .DS_Store

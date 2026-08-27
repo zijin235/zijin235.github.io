@@ -1,72 +1,59 @@
+# weii.github.io — 个人主页（Nuxt 4 + TypeScript + Nuxt UI）
 
-<h1 align="center">
-AcadHomepage
-</h1>
+原 Jekyll 版（acad-homepage 模板）的完整重写：**Nuxt 4（原生 `app/` 目录结构）+ TypeScript + @nuxt/ui v4**，
+样式与原版 1:1 一致（品牌色 `#224b8d`、容器 1160px、顶栏 56px、圆角 3px）。
 
-<div align="center">
+## 技术栈
 
-[![](https://img.shields.io/github/stars/RayeRen/acad-homepage.github.io)](https://github.com/RayeRen/acad-homepage.github.io)
-[![](https://img.shields.io/github/forks/RayeRen/acad-homepage.github.io)](https://github.com/RayeRen/acad-homepage.github.io)
-[![](https://img.shields.io/github/issues/RayeRen/acad-homepage.github.io)](https://github.com/RayeRen/acad-homepage.github.io)
-[![](https://img.shields.io/github/license/RayeRen/acad-homepage.github.io)](https://github.com/RayeRen/acad-homepage.github.io/blob/main/LICENSE)  | [中文文档](./docs/README-zh.md) 
-</div>
+- **Nuxt 4.5**（SSG：`npm run generate` → 纯静态产物，GitHub Actions 部署到 `gh-pages` 分支）
+- **@nuxt/ui v4** 组件库（UApp / UHeader / UNavigationMenu / UAvatar / UBadge / UButton / ULink / UFooter）
+- **Tailwind CSS v4** + 自定义 `brand` 色阶（对齐原站主色）
+- 全站 **TypeScript** 类型（作者 / 出版物 / 时间线 / Scholar 统计）
 
-<p align="center">A Modern and Responsive Academic Personal Homepage</p>
+## 目录结构
 
-<p align="center">
-    <br>
-    <img src="docs/screenshot.png" width="100%"/>
-    <br>
-</p>
+```
+├── app/
+│   ├── app.vue                  ← UApp + 布局 + UFooter
+│   ├── pages/index.vue          ← 主页面（useSeoMeta / Scholar 数据刷新）
+│   ├── components/              ← AppMasthead(UHeader) / AuthorSidebar(UAvatar) /
+│   │                               PaperBox(UBadge+UButton) / PublicationList / TimelineSection
+│   ├── composables/useScholarStats.ts  ← 类型安全拉取引用数据（替代 jQuery getJSON）
+│   ├── data/                    ← site.ts / content.ts（Typed 内容，替代 _config.yml + about.md）
+│   ├── types/index.ts           ← 全站类型模型
+│   └── assets/css/main.css      ← tailwind + @nuxt/ui + 自定义布局样式
+├── public/                      ← 静态资源（favicon / 头像 / 论文图）
+├── google_scholar_crawler/      ← 引用数据爬虫（GitHub Action 定时运行，无需改动）
+├── .github/workflows/
+│   ├── google_scholar_crawler.yaml  ← 生成 gs_data.json → google-scholar-stats 分支
+│   └── deploy.yml                   ← 构建 Nuxt → 部署 gh-pages 分支
+├── app.config.ts                ← Nuxt UI 主题（primary: brand）
+├── nuxt.config.ts
+└── tsconfig.json
+```
 
-Some examples:
-- [Demo Page](https://rayeren.github.io/acad-homepage.github.io/)
-- [Personal Homepage of the author](https://rayeren.github.io/)
+## 本地开发 / 构建
 
-## Key Features
-- **Automatically update google scholar citations**: using the google scholar crawler and github action, this REPO can update the author citations and publication citations automatically.
-- **Support Google analytics**: you can trace the traffics of your homepage by easy configuration.
-- **Responsive**: this homepage automatically adjust for different screen sizes and viewports.
-- **Beautiful and Simple Design**: this homepage is beautiful and simple, which is very suitable for academic personal homepage.
-- **SEO**: search Engine Optimization (SEO) helps search engines find the information you publish on your homepage easily, then rank it against similar websites.
+```bash
+npm install
+npm run dev        # 开发服务器 http://localhost:3000（HMR）
+npm run generate   # 静态生成到 .output/public
+npx serve .output/public  # 本地预览产物
+```
 
-## Quick Start
+> 注：`.npmrc` 使用 npmmirror 镜像源；若 CI 或本地 rolldown 原生 binding 缺失，
+> 显式指定官方源：`npm ci --registry=https://registry.npmjs.org`。
 
-1. Fork this REPO and rename to `USERNAME.github.io`, where `USERNAME` is your github USERNAME.
-1. Configure the google scholar citation crawler:
-    1. Find your google scholar ID in the url of your google scholar page (e.g., https://scholar.google.com/citations?user=SCHOLAR_ID), where `SCHOLAR_ID` is your google scholar ID.
-    1. Set GOOGLE_SCHOLAR_ID variable to your google scholar ID in `Settings -> Secrets -> Actions -> New repository secret` of the REPO website with `name=GOOGLE_SCHOLAR_ID` and `value=SCHOLAR_ID`.
-    1. Click the `Action` of the REPO website and enable the workflows by clicking *"I understand my workflows, go ahead and enable them"*. This github action will generate google scholar citation stats data `gs_data.json` in `google-scholar-stats` branch of your REPO. When you update your main branch, this action will be triggered. This action will also be trigger 08:00 UTC everyday.
-1. Generate favicon using [favicon-generator](https://redketchup.io/favicon-generator) and download all generated files to `REPO/images`.
-1. Modify the configuration of your homepage `_config.yml`:
-    1. `title`: the title of your homepage
-    1. `description`: the description of your homepage
-    1. `repository`: USER_NAME/REPO_NAME  
-    1. `google_analytics_id` (optional): google analytics ID
-    1. SEO Related keys (optional): get these keys from search engine consoles (e.g. Google, Bing and Baidu) and paste here.
-    1. `author`: the author information of this homepage, including some other websites, emails, city and univeristy.
-    1. More configuration details are described in the comments.
-1. Add your homepage content in `_pages/about.md`.
-    1. You can use html+markdown syntax just same as jekyll.
-    1. You can use a `<span>` tag with class `show_paper_citations` and attribute `data` to display the citations of your paper. Set the data to the google scholar paper ID. For
-        ```html
-        <span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span>
-        ``` 
-        > Q: How to get the google scholar paper ID?   
-        > A: Enter your google scholar homepage and click the paper name. Then you can see the paper ID from `citation_for_view=XXXX`, where `XXXX` is the required paper ID.
-1. Your page will be published at `https://USERNAME.github.io`.
+## 部署（GitHub Actions）
 
-## Debug Locally
+推送 `main` 后自动执行 `.github/workflows/deploy.yml`：
 
-1. Clone your REPO to local using `git clone`.
-1. Install Jekyll building environment, including `Ruby`, `RubyGems`, `GCC` and `Make` following [the installation guide](https://jekyllrb.com/docs/installation/#requirements).
-1. Run `bash run_server.sh` to start Jekyll livereload server.
-1. Open http://127.0.0.1:4000 in your browser.
-1. If you change the source code of the website, the livereload server will automatically refresh.
-1. When you finish the modification of your homepage, `commit` your changings and `push` to your remote REPO using `git` command.
+1. `npm run generate` 生成静态产物到 `.output/public`
+2. `peaceiris/actions-gh-pages` 推送到 `gh-pages` 分支
+3. 仓库 Settings → Pages → **Deploy from a branch** → `gh-pages` `/ (root)`
 
-# Acknowledges
+`weii.github.io` 是用户站点（根路径），无需 `app.baseURL`；
+若迁到项目仓库，加 `app.baseURL: '/repo/'` 即可。
 
-- AcadHomepage incorporates Font Awesome, which is distributed under the terms of the SIL OFL 1.1 and MIT License.
-- AcadHomepage is influenced by the github repo [mmistakes/minimal-mistakes](https://github.com/mmistakes/minimal-mistakes), which is distributed under the MIT License.
-- AcadHomepage is influenced by the github repo [academicpages/academicpages.github.io](https://github.com/academicpages/academicpages.github.io), which is distributed under the MIT License.
+Google Scholar 引用数据工作流（`google_scholar_crawler.yaml`）保持原样，
+每天 08:00 UTC 或 Pages 构建时更新 `google-scholar-stats` 分支的数据。
