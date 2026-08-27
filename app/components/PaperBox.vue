@@ -25,6 +25,15 @@ const paperLink = computed(() => props.pub.links?.[0]?.url)
         >
           {{ pub.badge }}
         </UBadge>
+        <UBadge
+          v-if="pub.ccf"
+          size="xs"
+          color="primary"
+          variant="outline"
+          class="mb-2 ml-1.5"
+        >
+          {{ pub.ccf }}
+        </UBadge>
         <img v-if="pub.image" :src="pub.image" :alt="pub.imageAlt" width="100%" />
       </div>
     </div>
