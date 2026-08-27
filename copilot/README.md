@@ -9,7 +9,7 @@
 
 | 文件 | 作用 |
 |---|---|
-| `AGENTS.md`（仓库根） | 权威维护手册：内容维护指南、字段说明、视觉约束、验证/提交规范 |
+| `AGENTS.md`（仓库根） | 权威维护手册：内容维护指南、字段说明、视觉约束、验证/提交规范（**Claude Code / Codex 同样自动读取**） |
 | `.github/copilot-instructions.md` | Copilot 专用指令（要点 + 安全边界） |
 
 用法：打开仓库（IDE 的 Copilot Chat / Copilot coding agent），直接说
@@ -39,6 +39,22 @@
      Fine-grained，权限勾选 Copilot / repo）
    - 或 BYOK：在 secret 中配置你的 LLM provider key 并去掉 workflow 里的注释
 3. 手动触发测试：Actions → **Copilot Maintain** → Run workflow
+
+## 路径 4：Claude / Codex 在 workflow 里自动维护 🚀
+
+`agent-maintain.yml`（带 `workflow_dispatch`，选择 agent）用 **headless CLI** 在 CI 里运行
+Claude Code 或 OpenAI Codex（两者都会自动读取 `AGENTS.md`）：
+
+| Agent | 实现 | 认证 secret |
+|---|---|---|
+| **Claude Code** | `@anthropic-ai/claude-code` CLI + `claude -p ... --dangerously-skip-permissions` | `ANTHROPIC_API_KEY` |
+| **OpenAI Codex** | `@openai/codex` CLI + `codex exec --sandbox workspace-write --full-auto` | `OPENAI_API_KEY` |
+
+启用：Actions → **Agent Maintain** → Run workflow → 选 claude/codex →（可选填额外指令）。
+有改动自动开 PR 等 review（不直接推 main）。
+
+> 也可用 Anthropic 官方 `anthropics/claude-code-action`（GitHub Action，需装 Claude GitHub App），
+> 见其仓库 README 的 Scheduled Maintenance 示例；本项目默认用更可控的 headless CLI 方式。
 
 ## 常用命令（本地）
 

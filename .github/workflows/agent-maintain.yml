@@ -1,0 +1,90 @@
+name: Agent Maintain (Claude / Codex)
+
+on:
+  workflow_dispatch:
+    inputs:
+      agent:
+        description: '维护 agent：claude 或 codex'
+        type: choice
+        default: claude
+        options:
+          - claude
+          - codex
+      message:
+        description: '额外维护指令（可选，例如：把 2025.01 加进 News）'
+        type: string
+        default: ''
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: agent-maintain
+  cancel-in-progress: true
+
+env:
+  # 通用维护提示词（agent 会自己读取仓库根 AGENTS.md）
+  MAINT_PROMPT: |
+    You are maintaining the personal homepage repository in the current working directory.
+
+    1. Read AGENTS.md at the repository root and follow it strictly (authoritative maintenance handbook).
+    2. Inspect app/data/site.ts and app/data/content.ts, then perform reasonable content maintenance
+       (News newest first, publications, author info, fix typos/bad field formats, images must exist in public/).
+    3. Do NOT change styling, layout or components unless clearly necessary (visual rules in AGENTS.md).
+    4. Verify by running `npm run generate` (deps pre-installed); fix errors you introduced.
+    5. Print a short summary of changes, or "NO_CHANGES".
+
+jobs:
+  maintain:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # 项目依赖：让 agent 在会话内能跑 npm run generate 验证（官方源规避 npmmirror binding 问题）
+      - name: Install project dependencies
+        run: npm ci --registry=https://registry.npmjs.org
+
+      - name: Run Claude Code (headless)
+        if: inputs.agent == 'claude'
+        run: |
+          npm install -g @anthropic-ai/claude-code@latest
+          claude -p "${MAINT_PROMPT}\n\nEXTRA: ${{ inputs.message }}" \
+            --dangerously-skip-permissions --model sonnet --output-format text
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+
+      - name: Run OpenAI Codex (headless)
+        if: inputs.agent == 'codex'
+        run: |
+          npm install -g @openai/codex@latest
+          codex exec --sandbox workspace-write --full-auto "${MAINT_PROMPT}\n\nEXTRA: ${{ inputs.message }}"
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+
+      - name: Push changes and open PR
+        if: success()
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            BRANCH="agent-maintain/$(date +%Y%m%d)-${{ inputs.agent }}"
+            git checkout -b "$BRANCH"
+            git add -A
+            git commit -m "content: automated maintenance by ${{ inputs.agent }}"
+            git push -u origin "$BRANCH"
+            gh pr create --base main --fill \
+              --title "content: ${{ inputs.agent }} 自动维护 $(date +%Y-%m-%d)" \
+              --body "由 Agent Maintain workflow 自动生成，请 review 后合并。"
+            echo "PR created."
+          else
+            echo "No changes — nothing to commit."
+          fi
+        env:
+          GH_TOKEN: ${{ github.token }}
