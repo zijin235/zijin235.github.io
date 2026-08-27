@@ -262,10 +262,10 @@ p {
   margin-left: 0.5em;
 }
 
-/* Research Interests（参考站列表式呈现） */
+/* Research Interests（列表符号呈现） */
 .research-interests {
-  list-style: none;
-  padding: 0;
+  list-style: disc;
+  padding-left: 1.4em;
   margin: 0.5em 0 1.5em;
 }
 

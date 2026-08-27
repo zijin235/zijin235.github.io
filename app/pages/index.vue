@@ -21,7 +21,7 @@ useSeoMeta({
   <article itemscope itemtype="http://schema.org/CreativeWork">
     <section class="page__content">
       <!-- ===== About Me ===== -->
-      <span class="anchor" id="about-me" />
+      <SectionTitle id="about-me" icon="👤" :title="t('section.about')" />
       <p v-for="(t, i) in about" :key="i" v-html="t" />
 
       <!-- ===== Research Interests（主页简写，只列方向名） ===== -->

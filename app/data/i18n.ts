@@ -10,6 +10,7 @@ export const messages: Record<Locale, Record<string, string>> = {
 
     'site.name': 'Cheng Wei',
     'site.bio': 'M.S. Student · NUAA',
+    'section.about': 'About Me',
     'site.location': 'Nanjing, China',
     'site.employer': 'College of Computer Science and Technology / School of Software',
 
@@ -42,6 +43,7 @@ export const messages: Record<Locale, Record<string, string>> = {
 
     'site.name': '程伟',
     'site.bio': '硕士研究生 · 南航',
+    'section.about': '个人简介',
     'site.location': '南京, 中国',
     'site.employer': '计算机科学与技术学院/软件学院',
 
