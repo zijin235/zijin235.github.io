@@ -57,3 +57,10 @@ npx serve .output/public  # 本地预览产物
 
 Google Scholar 引用数据工作流（`google_scholar_crawler.yaml`）保持原样，
 每天 08:00 UTC 或 Pages 构建时更新 `google-scholar-stats` 分支的数据。
+
+## 🤖 AI 维护
+
+- **仓库根 `AGENTS.md`**：维护手册（内容指南 / 视觉约束 / 检查清单），GitHub Copilot 与本地 agent 自动读取
+- **`.github/copilot-instructions.md`**：Copilot 在线指令
+- **`.pi/skills/homepage-maintenance/`**：本地 agent（pi）维护 skill
+- **`copilot/`**：Copilot SDK 定时自动维护（每周开 PR），启用方式见 [`copilot/README.md`](copilot/README.md)

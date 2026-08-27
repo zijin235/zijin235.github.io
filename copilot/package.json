@@ -1,0 +1,9 @@
+{
+  "name": "copilot-maintain",
+  "private": true,
+  "type": "module",
+  "description": "GitHub Copilot SDK 驱动的自动维护脚本（由 .github/workflows/copilot-maintain.yml 调用）",
+  "dependencies": {
+    "@github/copilot-sdk": "^1.0.11"
+  }
+}

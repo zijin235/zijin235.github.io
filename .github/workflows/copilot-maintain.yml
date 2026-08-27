@@ -1,0 +1,62 @@
+name: Copilot Maintain
+
+on:
+  workflow_dispatch:          # 手动触发：Actions → Copilot Maintain → Run workflow
+  schedule:
+    - cron: '0 4 * * 1'       # 每周一 04:00 UTC，可自行调整
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: copilot-maintain
+  cancel-in-progress: true
+
+jobs:
+  maintain:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # 主依赖：让 agent 在会话内能跑 npm run generate 验证
+      - name: Install project dependencies
+        run: npm ci --registry=https://registry.npmjs.org
+
+      # Copilot SDK
+      - name: Install Copilot SDK
+        run: npm ci --prefix copilot --registry=https://registry.npmjs.org
+
+      - name: Run Copilot maintenance agent
+        run: node copilot/maintain.mjs
+        env:
+          # 优先用带 Copilot 权限的 token（GitHub Settings → Developer settings → Fine-grained PAT，
+          # 或仓库 Secrets 中配置 COPILOT_GITHUB_TOKEN）；未配置时回落到 GITHUB_TOKEN。
+          COPILOT_GITHUB_TOKEN: ${{ secrets.COPILOT_GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ github.token }}
+          # BYOK 可选：设置自己的 LLM key（见 copilot/README.md）
+          # BYOK_GITHUB_TOKEN: ${{ secrets.BYOK_GITHUB_TOKEN }}
+
+      - name: Push changes and open PR
+        if: success()
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git checkout -b copilot/maintenance-$(date +%Y%m%d)
+            git add -A
+            git commit -m "content: automated maintenance by Copilot"
+            git push -u origin HEAD
+            gh pr create --base main --fill --title "content: Copilot 自动维护 $(date +%Y-%m-%d)" --body "Copilot maintain workflow 自动生成，请 review 后合并。"
+            echo "PR created."
+          else
+            echo "No changes — nothing to commit."
+          fi
+        env:
+          GH_TOKEN: ${{ github.token }}
