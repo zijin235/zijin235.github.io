@@ -52,6 +52,12 @@ npx serve .output/public  # 本地预览产物
 2. `peaceiris/actions-gh-pages` 推送到 `gh-pages` 分支
 3. 仓库 Settings → Pages → **Deploy from a branch** → `gh-pages` `/ (root)`
 
+**打包机制**：`nuxt generate` 走 Nitro `static` preset，把 SSG 页面预渲染成纯静态 HTML +
+客户端 JS/CSS + 图片（整个 `.output/public` 目录），GitHub Pages 直接托管，**不需要服务器**。
+单页（锚点导航）无路由刷新问题；若以后加子路由（如 `/about`），页面也会被预渲染成独立目录，刷新正常。
+
+> ⚠️ 部署只用 `npm run generate`，**不要用 `npm run build`**（那是 `node-server` preset 产物，需服务端运行，无法直接放 GitHub Pages）。
+
 `weii.github.io` 是用户站点（根路径），无需 `app.baseURL`；
 若迁到项目仓库，加 `app.baseURL: '/repo/'` 即可。
 
