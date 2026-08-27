@@ -3,8 +3,7 @@ import type { AuthorProfile, SocialLink } from '~/types'
 /** 站点级配置（对应旧 _config.yml 的 Site Settings） */
 export const site = {
   title: 'Cheng Wei',
-  description:
-    'M.S. student in AI Security and Agent Security at the College of Computer Science and Technology / School of Software, Nanjing University of Aeronautics and Astronautics.',
+  description: 'Research interests: AI Security and Agent Security',
   repository: 'zijin235/weii.github.io',
 } as const
 
@@ -12,7 +11,7 @@ export const site = {
 export const author: AuthorProfile = {
   name: 'Cheng Wei',
   avatar: '/android-chrome-512x512.png',
-  bio: 'M.S. Student · Nanjing University of Aeronautics and Astronautics',
+  bio: 'M.S. Student · NUAA',
   location: 'Nanjing, China',
   employer: 'College of Computer Science and Technology / School of Software',
   email: 'chengweii@nuaa.edu.cn',

@@ -2,12 +2,15 @@
 import { site } from '~/data/site'
 import { education, honors, internships, news, publications, talks } from '~/data/content'
 
-// 对应旧站 head.html 的 SEO meta
+// 对应旧站 head.html 的 SEO meta（完整描述仅在此出现一次，避免侧栏重复）
+const seoDescription =
+  'M.S. student in AI Security and Agent Security at the College of Computer Science and Technology / School of Software, Nanjing University of Aeronautics and Astronautics.'
+
 useSeoMeta({
   title: () => site.title,
-  description: site.description,
+  description: seoDescription,
   ogTitle: () => site.title,
-  ogDescription: site.description,
+  ogDescription: seoDescription,
 })
 </script>
 
