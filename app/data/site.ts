@@ -2,27 +2,33 @@ import type { AuthorProfile, SocialLink } from '~/types'
 
 /** 站点级配置（对应旧 _config.yml 的 Site Settings） */
 export const site = {
-  title: '程伟',
+  title: 'Cheng Wei',
   description:
-    'AI 安全 / Agent 安全方向硕士研究生，南京航空航天大学计算机科学与技术学院/软件学院',
+    'M.S. student in AI Security and Agent Security at the College of Computer Science and Technology / School of Software, Nanjing University of Aeronautics and Astronautics.',
   repository: 'zijin235/weii.github.io',
-  googlescholar: 'https://scholar.google.com/citations?user=DhtAFkwAAAAJ',
 } as const
 
 /** 作者信息（对应旧 _config.yml 的 author:） */
 export const author: AuthorProfile = {
-  name: '程伟',
+  name: 'Cheng Wei',
   avatar: '/android-chrome-512x512.png',
-  bio: '硕士研究生 | 南京航空航天大学',
-  location: '南京, 中国',
-  employer: '计算机科学与技术学院/软件学院',
-  email: '', // 补充真实邮箱后会自动显示；留空则不显示
+  bio: 'M.S. Student · Nanjing University of Aeronautics and Astronautics',
+  location: 'Nanjing, China',
+  employer: 'College of Computer Science and Technology / School of Software',
+  email: 'chengweii@nuaa.edu.cn',
 }
 
 /** 社交链接（对应旧 author-profile.html 里的一堆 if 分支） */
 export const socialLinks: SocialLink[] = [
-  { id: 'google-scholar', label: 'Google Scholar', url: site.googlescholar },
+  // 地图定位：南京航空航天大学 将军路校区
+  {
+    id: 'map',
+    label: 'Jiangjunlu Campus (NUAA)',
+    url: 'https://maps.google.com/?q=南京航空航天大学将军路校区',
+  },
+  { id: 'email', label: 'Email', url: `mailto:${author.email}` },
   { id: 'github', label: 'GitHub', url: 'https://github.com/' },
-  // 补充邮箱后可恢复：{ id: 'email', label: 'Email', url: `mailto:${author.email}` }
+  // 创建 Google Scholar 账号后可恢复：
+  // { id: 'google-scholar', label: 'Google Scholar', url: 'https://scholar.google.com/citations?user=YOUR_ID' }
   // 需要更多就继续加：DBLP / ResearchGate / Twitter / ORCID ...
 ]

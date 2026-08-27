@@ -1,9 +1,6 @@
 <script setup lang="ts">
 import { site } from '~/data/site'
 import { education, honors, internships, news, publications, talks } from '~/data/content'
-import { useScholarStats } from '~/composables/useScholarStats'
-
-const { stats, loading, refresh, scholarBadgeUrl } = useScholarStats()
 
 // 对应旧站 head.html 的 SEO meta
 useSeoMeta({
@@ -12,9 +9,6 @@ useSeoMeta({
   ogTitle: () => site.title,
   ogDescription: site.description,
 })
-
-// 对应旧站 fetch_google_scholar_stats.html 的 $(document).ready(fetch)
-onMounted(() => refresh())
 </script>
 
 <template>
@@ -23,15 +17,12 @@ onMounted(() => refresh())
       <!-- ===== About Me ===== -->
       <span class="anchor" id="about-me" />
       <p>
-        我是南京航空航天大学计算机科学与技术学院/软件学院的硕士研究生，导师为 zhouyu。
+        I am an M.S. student at the College of Computer Science and Technology / School of
+        Software, Nanjing University of Aeronautics and Astronautics (NUAA), advised by
+        Prof. zhouyu.
       </p>
       <p>
-        研究方向为 <strong>AI 安全</strong> 与 <strong>Agent 安全</strong>。
-        Google Scholar 总引用：
-        <a :href="site.googlescholar" target="_blank" rel="noopener noreferrer">
-          <strong id="total_cit">{{ loading ? '…' : stats.citedby.toLocaleString() }}</strong>
-        </a>
-        <img :src="scholarBadgeUrl()" alt="citations" />
+        My research focuses on <strong>AI Security</strong> and <strong>Agent Security</strong>.
       </p>
 
       <!-- ===== News ===== -->

@@ -1,9 +1,5 @@
 <script setup lang="ts">
 import { author, site, socialLinks } from '~/data/site'
-import { useScholarStats } from '~/composables/useScholarStats'
-
-// 与页面共享同一份 state，由 pages/index.vue 触发 refresh
-const { stats, loading, scholarBadgeUrl } = useScholarStats()
 </script>
 
 <template>
@@ -44,12 +40,6 @@ const { stats, loading, scholarBadgeUrl } = useScholarStats()
             >
               {{ s.label }}
             </ULink>
-          </li>
-
-          <li class="citations">
-            <span class="text-muted">Citations:</span>
-            <strong id="total_cit">{{ loading ? '…' : stats.citedby.toLocaleString() }}</strong>
-            <img :src="scholarBadgeUrl()" alt="Google Scholar citations badge" />
           </li>
         </ul>
       </div>

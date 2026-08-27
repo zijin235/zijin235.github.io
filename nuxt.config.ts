@@ -22,12 +22,12 @@ export default defineNuxtConfig({
   app: {
     head: {
       htmlAttrs: { lang: 'en' },
-      title: '程伟',
+      title: 'Cheng Wei',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         { name: 'HandheldFriendly', content: 'True' },
-        { name: 'description', content: 'AI 安全 / Agent 安全方向硕士研究生，南京航空航天大学计算机科学与技术学院/软件学院' },
+        { name: 'description', content: 'M.S. student in AI Security and Agent Security at the College of Computer Science and Technology / School of Software, Nanjing University of Aeronautics and Astronautics.' },
       ],
       link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     },
