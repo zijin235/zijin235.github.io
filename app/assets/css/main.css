@@ -242,6 +242,22 @@ p {
   margin-left: 0.5em;
 }
 
+/* Research Interests（参考站列表式呈现） */
+.research-interests {
+  list-style: none;
+  padding: 0;
+  margin: 0.5em 0 1.5em;
+}
+
+.research-interests li {
+  margin: 0.5em 0;
+  line-height: 1.65;
+}
+
+.research-interests strong {
+  color: var(--text);
+}
+
 /* ---------------- 响应式（与原版一致） ---------------- */
 @media (min-width: 768px) {
   .paper-box-image {

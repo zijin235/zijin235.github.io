@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { site } from '~/data/site'
-import { about, education, honors, internships, news, publications, talks } from '~/data/content'
+import { about, education, honors, internships, news, publications, researchInterests, talks } from '~/data/content'
 
 // 对应旧站 head.html 的 SEO meta（完整描述仅在此出现一次，避免侧栏重复）
 const seoDescription =
@@ -20,6 +20,14 @@ useSeoMeta({
       <!-- ===== About Me ===== -->
       <span class="anchor" id="about-me" />
       <p v-for="(t, i) in about" :key="i" v-html="t" />
+
+      <!-- ===== Research Interests ===== -->
+      <SectionTitle id="research-interests" icon="🔬" title="Research Interests" />
+      <ul class="research-interests">
+        <li v-for="r in researchInterests" :key="r.title">
+          <strong>{{ r.title }}</strong> — {{ r.description }}
+        </li>
+      </ul>
 
       <!-- ===== News ===== -->
       <TimelineSection id="news" icon="🔥" title="News" :entries="news" />

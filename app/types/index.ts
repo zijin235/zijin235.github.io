@@ -37,8 +37,13 @@ export interface Publication {
   /** Google Scholar paper id，用于自动填充引用数（对应旧站 <span class='show_paper_citations' data='...'>） */
   scholarId?: string
   title: string
+  /** 作者列表；用 **名字** 包裹自己（如 '**Cheng Wei**, A, B'）会在列表中加粗 */
   authors?: string
   venue?: string
+  /** 会议/期刊 + 年份的完整行（如 'In The 63rd Annual Meeting of the Association for Computational Linguistics, 2025.'） */
+  venueDetail?: string
+  /** CCF 等级标签（如 'CCF A'），显示为小 badge */
+  ccf?: string
   badge?: string
   image?: string
   imageAlt?: string
