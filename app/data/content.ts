@@ -7,8 +7,6 @@ import type { Publication, TimelineEntry } from '~/types'
 export const about: string[] = [
   // 身份：院校 / 导师（关联 Yu Zhou 教授主页）
   'I am an M.S. student at the College of Computer Science and Technology / School of Software, Nanjing University of Aeronautics and Astronautics (NUAA), advised by <a href="https://csyuzhou.github.io/" target="_blank" rel="noopener noreferrer" class="text-primary">Prof. Yu Zhou</a>.',
-  // 研究方向总述
-  'My research centers on the <strong>safety and security of AI systems and autonomous agents</strong>, with a focus on understanding and defending against the failure modes that emerge when large language models are built into real-world applications.',
   // 开放交流
   'I am open to discussion and collaboration on these topics — feel free to reach out via email.',
 ]
@@ -16,7 +14,6 @@ export const about: string[] = [
 // ---- 中文版 ----
 export const aboutZh: string[] = [
   '我是南京航空航天大学计算机科学与技术学院/软件学院的硕士研究生，导师为<a href="https://csyuzhou.github.io/" target="_blank" rel="noopener noreferrer" class="text-primary">周宇教授 (Prof. Yu Zhou)</a>。',
-  '我的研究聚焦于<strong>AI 系统与自主智能体（Agent）的安全</strong>，关注大语言模型被集成到真实应用时出现的各类失效模式，并探索相应的防护手段。',
   '欢迎就相关主题交流与合作 —— 可通过邮箱联系我。',
 ]
 
