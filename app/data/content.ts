@@ -49,41 +49,41 @@ export const researchInterestsZh: { title: string; description: string }[] = [
 /** 🔥 News（2025 至今的论文接收情况） */
 export const news: TimelineEntry[] = [
   {
-    date: '2025',
-    text: '🎉🎉 One paper is accepted by ACL 2025: Beyond Sequences: Two-dimensional Representation and Dependency Encoding for Code Generation.',
-  },
-  {
     date: '2026',
     text: '🎉🎉 One paper is accepted by ISSTA 2026: Insecure Coding Preferences in Long-Term Memory: Security Risks for LLM-based Code Generation.',
-  },
+  }
   {
     date: '2026',
     text: '🎉🎉 One paper is accepted by ASE 2026: Breaking Customized LLMs for Coding: Automated Red Teaming for Instruction Backdoor Attacks.',
-  },
+  }
   {
     date: '2026',
     text: '🎉🎉 One paper is accepted by Automated Software Engineering Journal: Defending Neural Code Understanding Models by Eliminating Backdoors.',
-  },
+  }
+  {
+    date: '2025',
+    text: '🎉🎉 One paper is accepted by ACL 2025: Beyond Sequences: Two-dimensional Representation and Dependency Encoding for Code Generation.',
+  }
 ]
 
 // ---- 中文版 ----
 export const newsZh: TimelineEntry[] = [
   {
-    date: '2025',
-    text: '🎉🎉 一篇论文被 ACL 2025 录用：Beyond Sequences: Two-dimensional Representation and Dependency Encoding for Code Generation。',
-  },
-  {
     date: '2026',
     text: '🎉🎉 一篇论文被 ISSTA 2026 录用：Insecure Coding Preferences in Long-Term Memory: Security Risks for LLM-based Code Generation。',
-  },
+  }
   {
     date: '2026',
     text: '🎉🎉 一篇论文被 ASE 2026 录用：Breaking Customized LLMs for Coding: Automated Red Teaming for Instruction Backdoor Attacks。',
-  },
+  }
   {
     date: '2026',
     text: '🎉🎉 一篇论文被 Automated Software Engineering Journal 录用：Defending Neural Code Understanding Models by Eliminating Backdoors。',
-  },
+  }
+  {
+    date: '2025',
+    text: '🎉🎉 一篇论文被 ACL 2025 录用：Beyond Sequences: Two-dimensional Representation and Dependency Encoding for Code Generation。',
+  }
 ]
 
 /**
@@ -119,24 +119,8 @@ export const representativePublicationsZh: Publication[] = [
   },
 ]
 
-/** 其他论文（二作及以上，列表） */
+/** 其他论文（二作及以上，列表，按时间倒序） */
 export const otherPublications: Publication[] = [
-  {
-    title: 'Beyond Sequences: Two-dimensional Representation and Dependency Encoding for Code Generation',
-    authors: 'Xiangyu Zhang, Yu Zhou, Guang Yang, **Wei Cheng**, Taolue Chen',
-    venue: 'ACL 2025',
-    venueDetail: 'In Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (ACL), 2025.',
-    ccf: 'CCF A',
-    links: [{ label: 'Paper', url: 'https://doi.org/10.18653/v1/2025.acl-long.308' }],
-  },
-  {
-    title: 'Less Is More: DocString Compression in Code Generation',
-    authors: 'Guang Yang, Yu Zhou, **Wei Cheng**, Xiangyu Zhang, Xiang Chen, Terry Yue Zhuo, Ke Liu, Xin Zhou, David Lo, Taolue Chen',
-    venue: 'TOSEM 2026',
-    venueDetail: 'ACM Transactions on Software Engineering and Methodology, Vol.35, No.2, pp:1-31, 2026.',
-    ccf: 'CCF A',
-    links: [{ label: 'Paper', url: 'https://doi.org/10.1145/3735636' }],
-  },
   {
     title: 'Insecure Coding Preferences in Long-Term Memory: Security Risks for LLM-based Code Generation',
     authors: 'Yuchen Chen, **Wei Cheng**, Yuan Xiao, Zhou Yang, Weifeng Sun, Chunrong Fang, Xiang Chen, Baowen Xu, David Lo, Zhenyu Chen',
@@ -152,12 +136,28 @@ export const otherPublications: Publication[] = [
     ccf: 'CCF A',
   },
   {
+    title: 'Less Is More: DocString Compression in Code Generation',
+    authors: 'Guang Yang, Yu Zhou, **Wei Cheng**, Xiangyu Zhang, Xiang Chen, Terry Yue Zhuo, Ke Liu, Xin Zhou, David Lo, Taolue Chen',
+    venue: 'TOSEM 2026',
+    venueDetail: 'ACM Transactions on Software Engineering and Methodology, Vol.35, No.2, pp:1-31, 2026.',
+    ccf: 'CCF A',
+    links: [{ label: 'Paper', url: 'https://doi.org/10.1145/3735636' }],
+  },
+  {
     title: 'Less is More: Towards Green Code Large Language Models via Unified Structural Pruning',
     authors: 'Guang Yang, Yu Zhou, Xiangyu Zhang, **Wei Cheng**, Ke Liu, Xiang Chen, Terry Yue Zhuo, Taolue Chen',
     venue: 'IP&M 2026',
     venueDetail: 'Information Processing & Management, Vol.63(4), 104580, 2026.',
     ccf: 'CCF B',
     links: [{ label: 'Paper', url: 'https://doi.org/10.1016/j.ipm.2025.104580' }],
+  },
+  {
+    title: 'Beyond Sequences: Two-dimensional Representation and Dependency Encoding for Code Generation',
+    authors: 'Xiangyu Zhang, Yu Zhou, Guang Yang, **Wei Cheng**, Taolue Chen',
+    venue: 'ACL 2025',
+    venueDetail: 'In Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (ACL), 2025.',
+    ccf: 'CCF A',
+    links: [{ label: 'Paper', url: 'https://doi.org/10.18653/v1/2025.acl-long.308' }],
   },
 ]
 
