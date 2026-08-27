@@ -14,7 +14,7 @@
 
 - **技术栈**：Nuxt 4（SSG，`app/` 目录结构）+ TypeScript + @nuxt/ui v4 + Tailwind CSS v4
 - **部署**：GitHub Actions `deploy.yml` → `npm run generate` → 推送 `gh-pages` 分支
-- **产物**：`.output/public`（纯静态），项目站点部署在 `/weii.github.io/`，`app.baseURL` 与之保持一致
+- **产物**：`.output/public`（纯静态），用户主页部署在根路径 `/`，`app.baseURL` 保持为 `/`
 - **样式要求**：视觉与原版 Jekyll 站点 1:1（品牌色 `#224b8d`、容器 1160px、顶栏 56px、圆角 3px），**不要随意改样式或版面**
 
 ## 目录结构与职责

@@ -4,7 +4,7 @@ import type { AuthorProfile, SocialLink } from '~/types'
 export const site = {
   title: 'Cheng Wei',
   description: 'Research interests: AI Security and Agent Security',
-  repository: 'zijin235/weii.github.io',
+  repository: 'zijin235/zijin235.github.io',
   /** 个人博客地址（占位）；填写后顶栏 Blogs（博客）即跳转 */
   blogUrl: '',
 } as const

@@ -13,15 +13,15 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       // Google Scholar 数据由 crawler Action 生成在 google-scholar-stats 分支
-      scholarStatsBaseUrl: 'https://cdn.jsdelivr.net/gh/zijin235/weii.github.io@',
+      scholarStatsBaseUrl: 'https://cdn.jsdelivr.net/gh/zijin235/zijin235.github.io@',
       scholarStatsFile: 'google-scholar-stats/gs_data.json',
       scholarStatsShieldFile: 'google-scholar-stats/gs_data_shieldsio.json',
     },
   },
 
   app: {
-    // GitHub Pages 项目站点：https://zijin235.github.io/weii.github.io/
-    baseURL: '/weii.github.io/',
+    // GitHub Pages 用户主页：https://zijin235.github.io/
+    baseURL: '/',
     head: {
       htmlAttrs: { lang: 'en' },
       title: 'Cheng Wei',
@@ -31,7 +31,7 @@ export default defineNuxtConfig({
         { name: 'HandheldFriendly', content: 'True' },
         { name: 'description', content: 'M.S. student in AI Security and Agent Security at the College of Computer Science and Technology / School of Software, Nanjing University of Aeronautics and Astronautics.' },
       ],
-      link: [{ rel: 'icon', type: 'image/x-icon', href: '/weii.github.io/favicon.ico' }],
+      link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     },
   },
 

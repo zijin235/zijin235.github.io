@@ -1,4 +1,4 @@
-# weii.github.io — 个人主页（Nuxt 4 + TypeScript + Nuxt UI）
+# zijin235.github.io — 个人主页（Nuxt 4 + TypeScript + Nuxt UI）
 
 原 Jekyll 版（acad-homepage 模板）的完整重写：**Nuxt 4（原生 `app/` 目录结构）+ TypeScript + @nuxt/ui v4**，
 样式与原版 1:1 一致（品牌色 `#224b8d`、容器 1160px、顶栏 56px、圆角 3px）。
@@ -58,8 +58,8 @@ npx serve .output/public  # 本地预览产物
 
 > ⚠️ 部署只用 `npm run generate`，**不要用 `npm run build`**（那是 `node-server` preset 产物，需服务端运行，无法直接放 GitHub Pages）。
 
-`weii.github.io` 是项目站点，线上路径为 `https://zijin235.github.io/weii.github.io/`，
-因此 `app.baseURL` 配置为 `/weii.github.io/`；
+`zijin235.github.io` 是 GitHub 用户主页仓库，线上地址为 `https://zijin235.github.io/`，
+因此 `app.baseURL` 配置为 `/`。
 若未来迁移到用户主页仓库或自定义域名，应将 `app.baseURL` 改回 `/`。
 
 Google Scholar 引用数据工作流（`google_scholar_crawler.yaml`）保持原样，
