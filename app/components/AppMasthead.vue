@@ -5,14 +5,10 @@ import { useLocale } from '~/composables/useLocale'
 
 const { t, locale, toggleLocale } = useLocale()
 
-// 导航链接：Publications / Internships 为独立路由；其余用 /#anchor 跨页定位
+// 导航仅保留「跳转到首页/独立页」的项；News/Honors/Education/Talks 均在首页内容区，点击顶部品牌可返回
 const items = computed<NavigationMenuItem[]>(() => [
-  { label: t('nav.about'), to: '/#about-me' },
-  { label: t('nav.news'), to: '/#news' },
+  { label: t('nav.about'), to: '/' },
   { label: t('nav.publications'), to: '/publications' },
-  { label: t('nav.honors'), to: '/#honors' },
-  { label: t('nav.education'), to: '/#education' },
-  { label: t('nav.talks'), to: '/#talks' },
   { label: t('nav.internships'), to: '/internships' },
 ])
 </script>

@@ -4,11 +4,7 @@ export type Locale = 'en' | 'zh'
 export const messages: Record<Locale, Record<string, string>> = {
   en: {
     'nav.about': 'About',
-    'nav.news': 'News',
     'nav.publications': 'Publications',
-    'nav.honors': 'Honors',
-    'nav.education': 'Education',
-    'nav.talks': 'Talks',
     'nav.internships': 'Internships',
 
     'site.bio': 'M.S. Student · NUAA',
@@ -40,11 +36,7 @@ export const messages: Record<Locale, Record<string, string>> = {
   },
   zh: {
     'nav.about': '个人简介',
-    'nav.news': '新闻',
     'nav.publications': '论文',
-    'nav.honors': '荣誉',
-    'nav.education': '教育',
-    'nav.talks': '讲座',
     'nav.internships': '实习',
 
     'site.bio': '硕士研究生 · 南航',
