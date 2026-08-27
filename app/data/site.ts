@@ -26,7 +26,7 @@ export const socialLinks: SocialLink[] = [
     url: 'https://maps.google.com/?q=南京航空航天大学将军路校区',
   },
   { id: 'email', label: 'Email', url: `mailto:${author.email}` },
-  { id: 'github', label: 'GitHub', url: 'https://github.com/' },
+  { id: 'github', label: 'GitHub', url: 'https://github.com/zijin235' },
   // 创建 Google Scholar 账号后可恢复：
   // { id: 'google-scholar', label: 'Google Scholar', url: 'https://scholar.google.com/citations?user=YOUR_ID' }
   // 需要更多就继续加：DBLP / ResearchGate / Twitter / ORCID ...
