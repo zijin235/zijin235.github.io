@@ -46,44 +46,20 @@ export const researchInterestsZh: { title: string; description: string }[] = [
   },
 ]
 
-/** 🔥 News（2025 至今的论文接收情况） */
+/** 🔥 News（2025 至今的论文接受情况，按时间倒序） */
 export const news: TimelineEntry[] = [
-  {
-    date: '2026',
-    text: '🎉🎉 One paper is accepted by ISSTA 2026: Insecure Coding Preferences in Long-Term Memory: Security Risks for LLM-based Code Generation.',
-  },
-  {
-    date: '2026',
-    text: '🎉🎉 One paper is accepted by ASE 2026: Breaking Customized LLMs for Coding: Automated Red Teaming for Instruction Backdoor Attacks.',
-  },
-  {
-    date: '2026',
-    text: '🎉🎉 One paper is accepted by Automated Software Engineering Journal: Defending Neural Code Understanding Models by Eliminating Backdoors.',
-  },
-  {
-    date: '2025',
-    text: '🎉🎉 One paper is accepted by ACL 2025: Beyond Sequences: Two-dimensional Representation and Dependency Encoding for Code Generation.',
-  }
+  { date: '2026', text: '🎉🎉 One paper is accepted by ISSTA 2026!' },
+  { date: '2026', text: '🎉🎉 One paper is accepted by ASE 2026!' },
+  { date: '2026', text: '🎉🎉 One paper is accepted by Automated Software Engineering Journal!' },
+  { date: '2025', text: '🎉🎉 One paper is accepted by ACL 2025!' },
 ]
 
 // ---- 中文版 ----
 export const newsZh: TimelineEntry[] = [
-  {
-    date: '2026',
-    text: '🎉🎉 一篇论文被 ISSTA 2026 录用：Insecure Coding Preferences in Long-Term Memory: Security Risks for LLM-based Code Generation。',
-  },
-  {
-    date: '2026',
-    text: '🎉🎉 一篇论文被 ASE 2026 录用：Breaking Customized LLMs for Coding: Automated Red Teaming for Instruction Backdoor Attacks。',
-  },
-  {
-    date: '2026',
-    text: '🎉🎉 一篇论文被 Automated Software Engineering Journal 录用：Defending Neural Code Understanding Models by Eliminating Backdoors。',
-  },
-  {
-    date: '2025',
-    text: '🎉🎉 一篇论文被 ACL 2025 录用：Beyond Sequences: Two-dimensional Representation and Dependency Encoding for Code Generation。',
-  }
+  { date: '2026', text: '🎉🎉 一篇论文被 ISSTA 2026 录用！' },
+  { date: '2026', text: '🎉🎉 一篇论文被 ASE 2026 录用！' },
+  { date: '2026', text: '🎉🎉 一篇论文被 Automated Software Engineering Journal 录用！' },
+  { date: '2025', text: '🎉🎉 一篇论文被 ACL 2025 录用！' },
 ]
 
 /**
