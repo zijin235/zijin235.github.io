@@ -18,7 +18,6 @@ export const messages: Record<Locale, Record<string, string>> = {
     'section.news': 'News',
     'section.honors': 'Honors and Awards',
     'section.education': 'Educations',
-    'section.talks': 'Invited Talks',
     'section.internships': 'Internships',
 
     'pub.title': 'Publications',
@@ -51,7 +50,6 @@ export const messages: Record<Locale, Record<string, string>> = {
     'section.news': '新闻',
     'section.honors': '荣誉与奖励',
     'section.education': '教育经历',
-    'section.talks': '特邀报告',
     'section.internships': '实习经历',
 
     'pub.title': '论文发表',

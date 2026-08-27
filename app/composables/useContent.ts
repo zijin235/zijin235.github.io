@@ -14,8 +14,6 @@ import {
   representativePublicationsZh,
   researchInterests,
   researchInterestsZh,
-  talks,
-  talksZh,
 } from '~/data/content'
 import { useLocale } from '~/composables/useLocale'
 
@@ -38,7 +36,6 @@ export function useContent() {
     otherPublications,
     honors: computed(() => (zh.value ? honorsZh : honors)),
     education: computed(() => (zh.value ? educationZh : education)),
-    talks: computed(() => (zh.value ? talksZh : talks)),
     internships: computed(() => (zh.value ? internshipsZh : internships)),
   }
 }

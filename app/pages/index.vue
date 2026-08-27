@@ -3,7 +3,7 @@ import { site } from '~/data/site'
 import { useContent } from '~/composables/useContent'
 import { useLocale } from '~/composables/useLocale'
 
-const { about, education, honors, internships, news, representativePublications, researchInterests, talks } = useContent()
+const { about, education, honors, internships, news, representativePublications, researchInterests } = useContent()
 const { t } = useLocale()
 
 // 对应旧站 head.html 的 SEO meta（完整描述仅在此出现一次，避免侧栏重复）
@@ -52,10 +52,9 @@ useSeoMeta({
       <!-- ===== News ===== -->
       <TimelineSection id="news" icon="🔥" :title="t('section.news')" :entries="news" />
 
-      <!-- ===== Honors / Education / Talks ===== -->
+      <!-- ===== Honors / Education ===== -->
       <TimelineSection id="honors" icon="🎖" :title="t('section.honors')" :entries="honors" />
       <TimelineSection id="education" icon="📖" :title="t('section.education')" :entries="education" />
-      <TimelineSection id="talks" icon="💬" :title="t('section.talks')" :entries="talks" />
     </section>
   </article>
 </template>

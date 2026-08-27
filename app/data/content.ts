@@ -125,40 +125,38 @@ export const otherPublications: Publication[] = [
   },
 ]
 
-/** 🎖 Honors and Awards */
+/** 🎖 Honors and Awards（来自个人简历） */
 export const honors: TimelineEntry[] = [
-  { date: '2021.10', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
-  { date: '2021.09', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+  { date: '2025', text: 'First-class Graduate Scholarship, Nanjing University of Aeronautics and Astronautics' },
+  { date: '2024', text: 'National Scholarship' },
+  { date: '2023', text: 'Merit Student of Nantong City' },
+  { date: '2023', text: 'First-class Scholarship, Nantong University' },
 ]
 
 // ---- 中文版 ----
 export const honorsZh: TimelineEntry[] = [
-  { date: '2021.10', text: '（示例荣誉条目，待更新）' },
-  { date: '2021.09', text: '（示例荣誉条目，待更新）' },
+  { date: '2025', text: '南京航空航天大学研究生一等奖学金' },
+  { date: '2024', text: '国家奖学金' },
+  { date: '2023', text: '南通市三好学生' },
+  { date: '2023', text: '南通大学校一等奖学金' },
 ]
 
-/** 📖 Educations */
+/** 📖 Educations（来自个人简历） */
 export const education: TimelineEntry[] = [
-  { date: '2019.06 - 2022.04 (now)', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
-  { date: '2015.09 - 2019.06', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+  {
+    date: '2024.09 - now',
+    text: 'College of Computer Science and Technology / School of Software, Nanjing University of Aeronautics and Astronautics (NUAA), M.S. in Software Engineering (advised by Prof. Yu Zhou)',
+  },
+  { date: '2020.09 - 2024.06', text: 'School of Information Science and Technology, Nantong University, B.S. in Software Engineering' },
 ]
 
 // ---- 中文版 ----
 export const educationZh: TimelineEntry[] = [
-  { date: '2019.06 - 2022.04 (now)', text: '（示例教育经历，待更新）' },
-  { date: '2015.09 - 2019.06', text: '（示例教育经历，待更新）' },
-]
-
-/** 💬 Invited Talks */
-export const talks: TimelineEntry[] = [
-  { date: '2021.06', text: 'Lorem ipsum dolor sit amet.', links: [{ label: 'video', url: 'https://github.com/' }] },
-  { date: '2021.03', text: 'Lorem ipsum dolor sit amet.', links: [{ label: 'video', url: 'https://github.com/' }] },
-]
-
-// ---- 中文版 ----
-export const talksZh: TimelineEntry[] = [
-  { date: '2021.06', text: '（示例讲座，待更新）' },
-  { date: '2021.03', text: '（示例讲座，待更新）' },
+  {
+    date: '2024.09 - 至今',
+    text: '南京航空航天大学 计算机科学与技术学院/软件学院，软件工程硕士（导师：周宇教授）',
+  },
+  { date: '2020.09 - 2024.06', text: '南通大学 信息科学技术学院，软件工程学士' },
 ]
 
 /** 💻 Internships */
