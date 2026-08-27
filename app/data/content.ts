@@ -77,8 +77,8 @@ export const representativePublications: Publication[] = [
     venueDetail: 'Automated Software Engineering Journal, Vol.33, 2026.',
     ccf: 'CCF B',
     badge: 'ASE Journal 2026',
-    image: '/500x300.png',
-    imageAlt: 'paper teaser placeholder',
+    image: '/baderaser-framework.png',
+    imageAlt: 'BADERASER framework overview',
     description:
       'We defend neural code understanding models by eliminating backdoors, improving their robustness against backdoor attacks.',
     featured: true,
