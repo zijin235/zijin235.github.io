@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { NavigationMenuItem } from '@nuxt/ui'
+import { site } from '~/data/site'
 import { useLocale } from '~/composables/useLocale'
 
 const { t, locale, toggleLocale } = useLocale()
@@ -10,6 +11,8 @@ const items = computed<NavigationMenuItem[]>(() => [
   { label: t('nav.publications'), to: '/publications' },
   { label: t('nav.internships'), to: '/internships' },
   { label: t('nav.cv'), to: '/cv' },
+  // 博客：站外链接；真实地址填到 data/site.ts 的 site.blogUrl（当前为占位符）
+  { label: t('nav.blogs'), to: site.blogUrl || '#', target: site.blogUrl ? '_blank' : undefined },
 ])
 </script>
 

@@ -7,6 +7,7 @@ export const messages: Record<Locale, Record<string, string>> = {
     'nav.publications': 'Publications',
     'nav.internships': 'Internships',
     'nav.cv': 'CV',
+    'nav.blogs': 'Blogs',
 
     'site.name': 'Cheng Wei',
     'site.bio': 'M.S. Student · NUAA',
@@ -40,6 +41,7 @@ export const messages: Record<Locale, Record<string, string>> = {
     'nav.publications': '论文',
     'nav.internships': '实习',
     'nav.cv': '简历',
+    'nav.blogs': '博客',
 
     'site.name': '程伟',
     'site.bio': '硕士研究生 · 南航',
