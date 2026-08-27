@@ -22,12 +22,12 @@ export default defineNuxtConfig({
   app: {
     head: {
       htmlAttrs: { lang: 'en' },
-      title: 'Lorem ipsum',
+      title: '程伟',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         { name: 'HandheldFriendly', content: 'True' },
-        { name: 'description', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+        { name: 'description', content: 'AI 安全 / Agent 安全方向硕士研究生，南京航空航天大学计算机科学与技术学院/软件学院' },
       ],
       link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     },

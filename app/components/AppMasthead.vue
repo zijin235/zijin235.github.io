@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { NavigationMenuItem } from '@nuxt/ui'
+import { site } from '~/data/site'
 
 // 导航链接（单页锚点，对应旧站 masthead）
 const items: NavigationMenuItem[] = [
@@ -20,8 +21,8 @@ const items: NavigationMenuItem[] = [
   -->
   <UHeader :ui="{ root: 'bg-white border-b border-muted' }">
     <template #left>
-      <ULink to="#about-me" aria-label="Lorem ipsum" class="font-bold text-default">
-        Lorem ipsum
+      <ULink to="#about-me" :aria-label="site.title" class="font-bold text-default">
+        {{ site.title }}
       </ULink>
     </template>
 

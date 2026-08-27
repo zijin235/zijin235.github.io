@@ -23,14 +23,12 @@ onMounted(() => refresh())
       <!-- ===== About Me ===== -->
       <span class="anchor" id="about-me" />
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum,
-        ac tempus justo dapibus sit amet.
+        我是南京航空航天大学计算机科学与技术学院/软件学院的硕士研究生，导师为 zhouyu。
       </p>
       <p>
-        My research interest includes neural machine translation and computer vision. I have
-        published more than 100 papers at the top international AI conferences with total
+        研究方向为 <strong>AI 安全</strong> 与 <strong>Agent 安全</strong>。
+        Google Scholar 总引用：
         <a :href="site.googlescholar" target="_blank" rel="noopener noreferrer">
-          google scholar citations
           <strong id="total_cit">{{ loading ? '…' : stats.citedby.toLocaleString() }}</strong>
         </a>
         <img :src="scholarBadgeUrl()" alt="citations" />
