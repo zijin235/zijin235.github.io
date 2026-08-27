@@ -1,5 +1,22 @@
 import type { Publication, TimelineEntry } from '~/types'
 
+/**
+ * About 段落（支持 <strong> 等简单 HTML 标签），
+ * 在「🚀 项目概览」里由首页渲染
+ */
+export const about: string[] = [
+  // 身份：院校 / 导师
+  'I am an M.S. student at the College of Computer Science and Technology / School of Software, Nanjing University of Aeronautics and Astronautics (NUAA), advised by Prof. zhouyu.',
+  // 研究方向总述
+  'My research centers on the <strong>safety and security of AI systems and autonomous agents</strong>, with a focus on understanding and defending against the failure modes that emerge when large language models are built into real-world applications.',
+  // AI 安全
+  'Within <strong>AI Security</strong>, I am interested in the adversarial robustness of deep learning — including adversarial attacks and defenses, backdoor &amp; data-poisoning threats, and reliable security evaluation for large language models.',
+  // Agent 安全
+  'Within <strong>Agent Security</strong>, my interests cover the security of LLM-based agents: prompt injection and indirect prompt injection, tool-calling and permission misuse, sandbox boundaries, risks in multi-agent collaboration, and the safety alignment of autonomous agents.',
+  // 开放交流
+  'I am open to discussion and collaboration on these topics — feel free to reach out via email.',
+]
+
 /** 🔥 News（对应旧 about.md 的 News 一节） */
 export const news: TimelineEntry[] = [
   {
