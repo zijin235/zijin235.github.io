@@ -47,6 +47,7 @@ google_scholar_crawler/ ← 引用数据爬虫（由 Action 运行，不要改�
 
 - 置顶论文：`featured: true` + `image`（图放 `public/`）+ `badge`（如 `CVPR 2025`）+ `links`
 - 普通论文：`title` + `authors` + `venue` + `links`
+- 作者列表用 `**名字**` 包住自己会加粗（第一作者高亮）；`venueDetail` 写会议/期刊全名行；`ccf` 写等级标签（如 `CCF A`）
 - 引用数自动填充：填 `scholarId`（Google Scholar 论文 ID，从 citations 链接的 `citation_for_view=XXXX` 取），显示为 "Citations: N"
 
 ### 4. 其他时间线（荣誉/教育/讲座/实习）

@@ -1,12 +1,12 @@
 import type { Publication, TimelineEntry } from '~/types'
 
 /**
- * About 段落（支持 <strong> 等简单 HTML 标签），
+ * About 段落（支持 <strong> / <a> 等简单 HTML 标签），
  * 首页渲染：身份 → 研究总述 → 开放交流
  */
 export const about: string[] = [
-  // 身份：院校 / 导师
-  'I am an M.S. student at the College of Computer Science and Technology / School of Software, Nanjing University of Aeronautics and Astronautics (NUAA), advised by Prof. zhouyu.',
+  // 身份：院校 / 导师（关联 Yu Zhou 教授主页）
+  'I am an M.S. student at the College of Computer Science and Technology / School of Software, Nanjing University of Aeronautics and Astronautics (NUAA), advised by <a href="https://csyuzhou.github.io/" target="_blank" rel="noopener noreferrer" class="text-primary">Prof. Yu Zhou</a>.',
   // 研究方向总述
   'My research centers on the <strong>safety and security of AI systems and autonomous agents</strong>, with a focus on understanding and defending against the failure modes that emerge when large language models are built into real-world applications.',
   // 开放交流
@@ -39,36 +39,15 @@ export const news: TimelineEntry[] = [
   },
 ]
 
-/** 📝 Publications（对应旧 about.md 的 Publications 一节） */
+/** 📝 Publications（对应旧 about.md 的 Publications 一节；**名字** 表示加粗自己） */
 export const publications: Publication[] = [
   {
-    scholarId: 'DhtAFkwAAAAJ:ALROH1vI_8AC',
-    title: 'Deep Residual Learning for Image Recognition',
-    authors: 'Kaiming He, Xiangyu Zhang, Shaoqing Ren, Jian Sun',
-    venue: 'CVPR 2016',
-    badge: 'CVPR 2016',
-    image: '/500x300.png',
-    imageAlt: 'paper teaser',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet.',
-    featured: true,
-    links: [
-      {
-        label: 'Paper',
-        url: 'https://openaccess.thecvf.com/content_cvpr_2016/papers/He_Deep_Residual_Learning_CVPR_2016_paper.pdf',
-      },
-      {
-        label: 'Project',
-        url: 'https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=DhtAFkwAAAAJ&citation_for_view=DhtAFkwAAAAJ:ALROH1vI_8AC',
-      },
-    ],
-  },
-  {
-    title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    authors: '**A**, B, C',
-    venue: 'CVPR 2020',
+    title: 'Beyond Sequences: Two-dimensional Representation and Dependency Encoding for Code Generation',
+    authors: 'Xiangyu Zhang, Yu Zhou, Guang Yang, **Wei Cheng**, Taolue Chen',
+    venue: 'ACL 2025',
+    venueDetail: 'In Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (ACL), 2025.',
     ccf: 'CCF A',
-    links: [{ label: 'GitHub', url: 'https://github.com' }],
+    links: [{ label: 'Paper', url: 'https://doi.org/10.18653/v1/2025.acl-long.308' }],
   },
 ]
 
