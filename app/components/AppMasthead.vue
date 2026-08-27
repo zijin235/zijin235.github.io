@@ -3,14 +3,15 @@ import type { NavigationMenuItem } from '@nuxt/ui'
 import { site } from '~/data/site'
 
 // 导航链接（单页锚点，对应旧站 masthead）
+// 导航链接：Publications 为独立路由；其余用 /#anchor 跨页定位（在子页点击可返回首页对应区块）
 const items: NavigationMenuItem[] = [
-  { label: 'About', to: '#about-me' },
-  { label: 'News', to: '#news' },
+  { label: 'About', to: '/#about-me' },
+  { label: 'News', to: '/#news' },
   { label: 'Publications', to: '/publications' },
-  { label: 'Honors', to: '#honors' },
-  { label: 'Education', to: '#education' },
-  { label: 'Talks', to: '#talks' },
-  { label: 'Internships', to: '#internships' },
+  { label: 'Honors', to: '/#honors' },
+  { label: 'Education', to: '/#education' },
+  { label: 'Talks', to: '/#talks' },
+  { label: 'Internships', to: '/#internships' },
 ]
 </script>
 
@@ -21,7 +22,7 @@ const items: NavigationMenuItem[] = [
   -->
   <UHeader :ui="{ root: 'bg-white border-b border-muted' }">
     <template #left>
-      <ULink to="#about-me" :aria-label="site.title" class="font-bold text-default">
+      <ULink to="/" :aria-label="site.title" class="font-bold text-default">
         {{ site.title }}
       </ULink>
     </template>
