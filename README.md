@@ -58,8 +58,9 @@ npx serve .output/public  # 本地预览产物
 
 > ⚠️ 部署只用 `npm run generate`，**不要用 `npm run build`**（那是 `node-server` preset 产物，需服务端运行，无法直接放 GitHub Pages）。
 
-`weii.github.io` 是用户站点（根路径），无需 `app.baseURL`；
-若迁到项目仓库，加 `app.baseURL: '/repo/'` 即可。
+`weii.github.io` 是项目站点，线上路径为 `https://zijin235.github.io/weii.github.io/`，
+因此 `app.baseURL` 配置为 `/weii.github.io/`；
+若未来迁移到用户主页仓库或自定义域名，应将 `app.baseURL` 改回 `/`。
 
 Google Scholar 引用数据工作流（`google_scholar_crawler.yaml`）保持原样，
 每天 08:00 UTC 或 Pages 构建时更新 `google-scholar-stats` 分支的数据。

@@ -12,7 +12,7 @@ export const site = {
 /** 作者信息（对应旧 _config.yml 的 author:） */
 export const author: AuthorProfile = {
   name: 'Cheng Wei',
-  avatar: '/android-chrome-512x512.png',
+  avatar: '/images/cheng-wei-avatar.jpg',
   bio: 'M.S. Student · NUAA',
   location: 'Nanjing, China',
   employer: 'College of Computer Science and Technology / School of Software',

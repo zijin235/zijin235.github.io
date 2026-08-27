@@ -34,7 +34,7 @@ const paperLink = computed(() => props.pub.links?.[0]?.url)
         >
           {{ pub.ccf }}
         </UBadge>
-        <img v-if="pub.image" :src="pub.image" :alt="pub.imageAlt" width="100%" />
+        <img v-if="pub.image" :src="sitePath(pub.image)" :alt="pub.imageAlt" width="100%" />
       </div>
     </div>
 

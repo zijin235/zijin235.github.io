@@ -14,7 +14,7 @@
 
 - **技术栈**：Nuxt 4（SSG，`app/` 目录结构）+ TypeScript + @nuxt/ui v4 + Tailwind CSS v4
 - **部署**：GitHub Actions `deploy.yml` → `npm run generate` → 推送 `gh-pages` 分支
-- **产物**：`.output/public`（纯静态），用户站点部署在根路径，无 `app.baseURL`
+- **产物**：`.output/public`（纯静态），项目站点部署在 `/weii.github.io/`，`app.baseURL` 与之保持一致
 - **样式要求**：视觉与原版 Jekyll 站点 1:1（品牌色 `#224b8d`、容器 1160px、顶栏 56px、圆角 3px），**不要随意改样式或版面**
 
 ## 目录结构与职责
@@ -92,7 +92,7 @@ git push             # 触发部署 workflow，1-2 分钟后线上更新
 
 ## 部署
 
-- `deploy.yml`（push main 触发）：`npm ci --registry=https://registry.npmjs.org` → `generate` → 推 `gh-pages`
+- `deploy.yml`（push main 触发）：`npm ci --registry=https://registry.npmjs.org` → `generate` → 推送静态产物到 `gh-pages`
 - Google Scholar 数据：`google_scholar_crawler.yaml` 每天 08:00 UTC 更新 `google-scholar-stats` 分支的 `gs_data.json`，页面运行时拉取，无需手动干预
 
 ## 维护检查清单（agent 修改前后）

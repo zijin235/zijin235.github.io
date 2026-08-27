@@ -20,6 +20,8 @@ export default defineNuxtConfig({
   },
 
   app: {
+    // GitHub Pages 项目站点：https://zijin235.github.io/weii.github.io/
+    baseURL: '/weii.github.io/',
     head: {
       htmlAttrs: { lang: 'en' },
       title: 'Cheng Wei',
@@ -29,7 +31,7 @@ export default defineNuxtConfig({
         { name: 'HandheldFriendly', content: 'True' },
         { name: 'description', content: 'M.S. student in AI Security and Agent Security at the College of Computer Science and Technology / School of Software, Nanjing University of Aeronautics and Astronautics.' },
       ],
-      link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+      link: [{ rel: 'icon', type: 'image/x-icon', href: '/weii.github.io/favicon.ico' }],
     },
   },
 

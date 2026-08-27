@@ -10,7 +10,7 @@ const { t } = useLocale()
     <div class="profile_box" itemscope itemtype="http://schema.org/Person">
       <div class="author__avatar">
         <UAvatar
-          :src="author.avatar"
+          :src="sitePath(author.avatar)"
           :alt="author.name"
           size="3xl"
           :ui="{

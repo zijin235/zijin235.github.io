@@ -10,7 +10,8 @@ const items = computed<NavigationMenuItem[]>(() => [
   { label: t('nav.about'), to: '/' },
   { label: t('nav.publications'), to: '/publications' },
   { label: t('nav.internships'), to: '/internships' },
-  { label: t('nav.cv'), to: '/cv' },
+  // CV 直接打开 public/cheng-wei-cv.pdf，由浏览器内置 PDF 阅读器在线预览
+  { label: t('nav.cv'), to: sitePath('/cheng-wei-cv.pdf'), target: '_blank', external: true },
   // 博客：站外链接；真实地址填到 data/site.ts 的 site.blogUrl（当前为占位符）
   { label: t('nav.blogs'), to: site.blogUrl || '#', target: site.blogUrl ? '_blank' : undefined },
 ])
