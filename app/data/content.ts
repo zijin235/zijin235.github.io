@@ -39,9 +39,14 @@ export const news: TimelineEntry[] = [
   },
 ]
 
-/** 📝 Publications（对应旧 about.md 的 Publications 一节；**名字** 表示加粗自己） */
-export const publications: Publication[] = [
-  // ── 置顶卡片（featured）：用户一作论文，配图占位，后续可换真实 teaser ──
+/**
+ * 📝 Publications —— 拆分为「代表性（一作，卡片）」与「其他（二作及以上，列表）」，
+ * 全量展示在 /publications 页面；主页只显示代表性卡片 + 入口。
+ * 作者列表用 **名字** 加粗自己。
+ */
+
+/** 代表性论文（一作，featured 卡片，带图 + 简介） */
+export const representativePublications: Publication[] = [
   {
     title: 'Defending Neural Code Understanding Models by Eliminating Backdoors',
     authors: '**Wei Cheng**, Yu Zhou, Guang Yang, Xiangyu Zhang, Wenhua Yang, Taolue Chen',
@@ -56,7 +61,10 @@ export const publications: Publication[] = [
     featured: true,
     links: [{ label: 'Paper', url: 'https://doi.org/10.1007/s10515-026-00645-6' }],
   },
-  // ── 列表（按 CCF 等级排序）──
+]
+
+/** 其他论文（二作及以上，列表） */
+export const otherPublications: Publication[] = [
   {
     title: 'Beyond Sequences: Two-dimensional Representation and Dependency Encoding for Code Generation',
     authors: 'Xiangyu Zhang, Yu Zhou, Guang Yang, **Wei Cheng**, Taolue Chen',

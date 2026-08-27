@@ -6,7 +6,7 @@ import { site } from '~/data/site'
 const items: NavigationMenuItem[] = [
   { label: 'About', to: '#about-me' },
   { label: 'News', to: '#news' },
-  { label: 'Publications', to: '#publications' },
+  { label: 'Publications', to: '/publications' },
   { label: 'Honors', to: '#honors' },
   { label: 'Education', to: '#education' },
   { label: 'Talks', to: '#talks' },

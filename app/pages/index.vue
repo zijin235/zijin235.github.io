@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { site } from '~/data/site'
-import { about, education, honors, internships, news, publications, researchInterests, talks } from '~/data/content'
+import { about, education, honors, internships, news, representativePublications, researchInterests, talks } from '~/data/content'
 
 // 对应旧站 head.html 的 SEO meta（完整描述仅在此出现一次，避免侧栏重复）
 const seoDescription =
@@ -29,13 +29,24 @@ useSeoMeta({
         </li>
       </ul>
 
+      <!-- ===== Representative Publications（主页只展示一作代表作 + 入口） ===== -->
+      <SectionTitle id="publications" icon="🏆" title="Representative Publications" />
+      <PaperBox v-for="(p, i) in representativePublications" :key="'rep' + i" :pub="p" />
+      <p class="pub-page-entry">
+        <UButton
+          size="sm"
+          color="primary"
+          variant="outline"
+          to="/publications"
+          icon="i-lucide-arrow-right"
+          trailing
+        >
+          View All Publications
+        </UButton>
+      </p>
+
       <!-- ===== News ===== -->
       <TimelineSection id="news" icon="🔥" title="News" :entries="news" />
-
-      <!-- ===== Publications ===== -->
-      <SectionTitle id="publications" icon="📝" title="Publications" />
-      <PaperBox v-for="(p, i) in publications.filter(p => p.featured)" :key="'f' + i" :pub="p" />
-      <PublicationList :pubs="publications.filter(p => !p.featured)" />
 
       <!-- ===== Honors / Education / Talks / Internships ===== -->
       <TimelineSection id="honors" icon="🎖" title="Honors and Awards" :entries="honors" />

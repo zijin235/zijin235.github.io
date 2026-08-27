@@ -43,12 +43,18 @@ google_scholar_crawler/ ← 引用数据爬虫（由 Action 运行，不要改�
 
 在**数组尾部**追加，保持日期从新到旧。`text` 中可用 emoji，不要写 HTML。
 
-### 3. 加一篇论文（`app/data/content.ts` → `publications` 数组）
+### 3. 加一篇论文（`app/data/content.ts`）
 
-- 置顶论文：`featured: true` + `image`（图放 `public/`）+ `badge`（如 `CVPR 2025`）+ `links`
-- 普通论文：`title` + `authors` + `venue` + `links`
-- 作者列表用 `**名字**` 包住自己会加粗（第一作者高亮）；`venueDetail` 写会议/期刊全名行；`ccf` 写等级标签（如 `CCF A`）
-- 引用数自动填充：填 `scholarId`（Google Scholar 论文 ID，从 citations 链接的 `citation_for_view=XXXX` 取），显示为 "Citations: N"
+论文按作者角色分两个数组（页面分别在首页摘要和 `/publications` 全量页）：
+
+- `representativePublications` —— **一作**论文，featured 卡片展示（带图 `image` + `badge` + `description`）
+- `otherPublications` —— 二作及以上，列表展示
+- 通用字段：`title` + `authors` + `venue` + `venueDetail`（会议/期刊全名行）+ `ccf`（等级标签，如 `CCF A`）+ `links`
+- 作者列表用 `**名字**` 包住自己会加粗（一作高亮）
+- 引用数自动填充：填 `scholarId`（Google Scholar 论文 ID），显示为 "Citations: N"
+
+> 主页只显示 `representativePublications` 卡片 + 「View All Publications」入口，
+> 完整列表在 `/publications` 页面（导航 Publications 跳转）。
 
 ### 4. 其他时间线（荣誉/教育/讲座/实习）
 

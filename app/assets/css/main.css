@@ -154,6 +154,26 @@ p {
   color: var(--text);
 }
 
+/* ---------------- 独立页面（Publications 等） ---------------- */
+.page__title {
+  margin: 0 0 0.4em;
+  font-size: 1.8em;
+  color: var(--text);
+}
+
+.pub-page-intro {
+  color: var(--text-light);
+  margin-bottom: 1.5em;
+}
+
+.pub-page-entry {
+  margin: 1.2em 0 1.5em;
+}
+
+.pub-page-back {
+  margin-top: 2.5em;
+}
+
 .anchor {
   display: block;
   position: relative;
