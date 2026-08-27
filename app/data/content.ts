@@ -13,6 +13,13 @@ export const about: string[] = [
   'I am open to discussion and collaboration on these topics — feel free to reach out via email.',
 ]
 
+// ---- 中文版 ----
+export const aboutZh: string[] = [
+  '我是南京航空航天大学计算机科学与技术学院/软件学院的硕士研究生，导师为<a href="https://csyuzhou.github.io/" target="_blank" rel="noopener noreferrer" class="text-primary">周宇教授 (Prof. Yu Zhou)</a>。',
+  '我的研究聚焦于<strong>AI 系统与自主智能体（Agent）的安全</strong>，关注大语言模型被集成到真实应用时出现的各类失效模式，并探索相应的防护手段。',
+  '欢迎就相关主题交流与合作 —— 可通过邮箱联系我。',
+]
+
 /** 🔬 Research Interests（独立小节，参考 NUAA 同学站点的列表式呈现） */
 export const researchInterests: { title: string; description: string }[] = [
   {
@@ -27,6 +34,18 @@ export const researchInterests: { title: string; description: string }[] = [
   },
 ]
 
+// ---- 中文版 ----
+export const researchInterestsZh: { title: string; description: string }[] = [
+  {
+    title: 'AI 安全',
+    description: '深度学习的对抗鲁棒性：对抗攻击与防御、后门与数据投毒威胁，以及大语言模型的可靠安全评估。',
+  },
+  {
+    title: 'Agent 安全',
+    description: 'LLM 智能体的安全：提示注入与间接提示注入、工具调用与权限滥用、沙箱边界、多智能体协作风险，以及自主智能体的安全对齐。',
+  },
+]
+
 /** 🔥 News（对应旧 about.md 的 News 一节） */
 export const news: TimelineEntry[] = [
   {
@@ -37,6 +56,12 @@ export const news: TimelineEntry[] = [
     date: '2022.02',
     text: '🎉🎉 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet.',
   },
+]
+
+// ---- 中文版 ----
+export const newsZh: TimelineEntry[] = [
+  { date: '2022.02', text: '🎉🎉（示例新闻，待更新）' },
+  { date: '2022.02', text: '🎉🎉（示例新闻，待更新）' },
 ]
 
 /**
@@ -60,6 +85,15 @@ export const representativePublications: Publication[] = [
       'We defend neural code understanding models by eliminating backdoors, improving their robustness against backdoor attacks.',
     featured: true,
     links: [{ label: 'Paper', url: 'https://doi.org/10.1007/s10515-026-00645-6' }],
+  },
+]
+
+// ---- 中文版（论文标题/作者/venue 保持英文原文，仅简介翻译） ----
+export const representativePublicationsZh: Publication[] = [
+  {
+    ...representativePublications[0],
+    description:
+      '我们通过消除代码理解模型中的后门来实现防御，提升模型面对后门攻击的鲁棒性。',
   },
 ]
 
@@ -97,10 +131,22 @@ export const honors: TimelineEntry[] = [
   { date: '2021.09', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
 ]
 
+// ---- 中文版 ----
+export const honorsZh: TimelineEntry[] = [
+  { date: '2021.10', text: '（示例荣誉条目，待更新）' },
+  { date: '2021.09', text: '（示例荣誉条目，待更新）' },
+]
+
 /** 📖 Educations */
 export const education: TimelineEntry[] = [
   { date: '2019.06 - 2022.04 (now)', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
   { date: '2015.09 - 2019.06', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+]
+
+// ---- 中文版 ----
+export const educationZh: TimelineEntry[] = [
+  { date: '2019.06 - 2022.04 (now)', text: '（示例教育经历，待更新）' },
+  { date: '2015.09 - 2019.06', text: '（示例教育经历，待更新）' },
 ]
 
 /** 💬 Invited Talks */
@@ -109,7 +155,18 @@ export const talks: TimelineEntry[] = [
   { date: '2021.03', text: 'Lorem ipsum dolor sit amet.', links: [{ label: 'video', url: 'https://github.com/' }] },
 ]
 
+// ---- 中文版 ----
+export const talksZh: TimelineEntry[] = [
+  { date: '2021.06', text: '（示例讲座，待更新）' },
+  { date: '2021.03', text: '（示例讲座，待更新）' },
+]
+
 /** 💻 Internships */
 export const internships: TimelineEntry[] = [
   { date: '2019.05 - 2020.02', text: 'Lorem ipsum dolor sit amet.', links: [{ label: 'Lorem', url: 'https://github.com/' }] },
+]
+
+// ---- 中文版 ----
+export const internshipsZh: TimelineEntry[] = [
+  { date: '2019.05 - 2020.02', text: '（示例实习，待更新）' },
 ]

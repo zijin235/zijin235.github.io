@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import { site } from '~/data/site'
-import { about, education, honors, internships, news, representativePublications, researchInterests, talks } from '~/data/content'
+import { useContent } from '~/composables/useContent'
+import { useLocale } from '~/composables/useLocale'
+
+const { about, education, honors, internships, news, representativePublications, researchInterests, talks } = useContent()
+const { t } = useLocale()
 
 // 对应旧站 head.html 的 SEO meta（完整描述仅在此出现一次，避免侧栏重复）
 const seoDescription =
@@ -22,7 +26,7 @@ useSeoMeta({
       <p v-for="(t, i) in about" :key="i" v-html="t" />
 
       <!-- ===== Research Interests ===== -->
-      <SectionTitle id="research-interests" icon="🔬" title="Research Interests" />
+      <SectionTitle id="research-interests" icon="🔬" :title="t('section.researchInterests')" />
       <ul class="research-interests">
         <li v-for="r in researchInterests" :key="r.title">
           <strong>{{ r.title }}</strong> — {{ r.description }}
@@ -30,7 +34,7 @@ useSeoMeta({
       </ul>
 
       <!-- ===== Representative Publications（主页只展示一作代表作 + 入口） ===== -->
-      <SectionTitle id="publications" icon="🏆" title="Representative Publications" />
+      <SectionTitle id="publications" icon="🏆" :title="t('section.representativePublications')" />
       <PaperBox v-for="(p, i) in representativePublications" :key="'rep' + i" :pub="p" />
       <p class="pub-page-entry">
         <UButton
@@ -41,18 +45,17 @@ useSeoMeta({
           icon="i-lucide-arrow-right"
           trailing
         >
-          View All Publications
+          {{ t('pub.viewAll') }}
         </UButton>
       </p>
 
       <!-- ===== News ===== -->
-      <TimelineSection id="news" icon="🔥" title="News" :entries="news" />
+      <TimelineSection id="news" icon="🔥" :title="t('section.news')" :entries="news" />
 
-      <!-- ===== Honors / Education / Talks / Internships ===== -->
-      <TimelineSection id="honors" icon="🎖" title="Honors and Awards" :entries="honors" />
-      <TimelineSection id="education" icon="📖" title="Educations" :entries="education" />
-      <TimelineSection id="talks" icon="💬" title="Invited Talks" :entries="talks" />
-      <TimelineSection id="internships" icon="💻" title="Internships" :entries="internships" />
+      <!-- ===== Honors / Education / Talks ===== -->
+      <TimelineSection id="honors" icon="🎖" :title="t('section.honors')" :entries="honors" />
+      <TimelineSection id="education" icon="📖" :title="t('section.education')" :entries="education" />
+      <TimelineSection id="talks" icon="💬" :title="t('section.talks')" :entries="talks" />
     </section>
   </article>
 </template>

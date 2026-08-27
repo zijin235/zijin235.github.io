@@ -1,18 +1,20 @@
 <script setup lang="ts">
 import type { NavigationMenuItem } from '@nuxt/ui'
 import { site } from '~/data/site'
+import { useLocale } from '~/composables/useLocale'
 
-// 导航链接（单页锚点，对应旧站 masthead）
-// 导航链接：Publications 为独立路由；其余用 /#anchor 跨页定位（在子页点击可返回首页对应区块）
-const items: NavigationMenuItem[] = [
-  { label: 'About', to: '/#about-me' },
-  { label: 'News', to: '/#news' },
-  { label: 'Publications', to: '/publications' },
-  { label: 'Honors', to: '/#honors' },
-  { label: 'Education', to: '/#education' },
-  { label: 'Talks', to: '/#talks' },
-  { label: 'Internships', to: '/#internships' },
-]
+const { t, locale, toggleLocale } = useLocale()
+
+// 导航链接：Publications / Internships 为独立路由；其余用 /#anchor 跨页定位
+const items = computed<NavigationMenuItem[]>(() => [
+  { label: t('nav.about'), to: '/#about-me' },
+  { label: t('nav.news'), to: '/#news' },
+  { label: t('nav.publications'), to: '/publications' },
+  { label: t('nav.honors'), to: '/#honors' },
+  { label: t('nav.education'), to: '/#education' },
+  { label: t('nav.talks'), to: '/#talks' },
+  { label: t('nav.internships'), to: '/internships' },
+])
 </script>
 
 <template>
@@ -28,6 +30,18 @@ const items: NavigationMenuItem[] = [
     </template>
 
     <UNavigationMenu :items="items" variant="link" class="gap-x-4" />
+
+    <template #right>
+      <UButton
+        size="sm"
+        color="neutral"
+        variant="ghost"
+        icon="i-lucide-languages"
+        :label="locale === 'en' ? '中文' : 'EN'"
+        :aria-label="locale === 'en' ? 'Switch to Chinese' : 'Switch to English'"
+        @click="toggleLocale"
+      />
+    </template>
 
     <template #body>
       <UNavigationMenu

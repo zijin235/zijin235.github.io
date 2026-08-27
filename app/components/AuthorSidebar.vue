@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import { author, site, socialLinks } from '~/data/site'
+import { useLocale } from '~/composables/useLocale'
+
+const { t } = useLocale()
 </script>
 
 <template>
@@ -19,16 +22,16 @@ import { author, site, socialLinks } from '~/data/site'
 
       <div class="author__content">
         <h3 class="author__name" itemprop="name">{{ author.name }}</h3>
-        <p v-if="author.bio" class="author__bio" itemprop="description">{{ author.bio }}</p>
+        <p v-if="author.bio" class="author__bio" itemprop="description">{{ t('site.bio') }}</p>
       </div>
 
       <div class="author__urls-wrapper">
         <ul class="author__urls social-icons">
           <li v-if="site.description">
-            <div class="author__desc">{{ site.description }}</div>
+            <div class="author__desc">{{ t('site.description') }}</div>
           </li>
-          <li v-if="author.location">📍 {{ author.location }}</li>
-          <li v-if="author.employer">🏢 {{ author.employer }}</li>
+          <li v-if="author.location">📍 {{ t('site.location') }}</li>
+          <li v-if="author.employer">🏢 {{ t('site.employer') }}</li>
 
           <li v-for="s in socialLinks" :key="s.id">
             <ULink

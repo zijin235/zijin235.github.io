@@ -3,6 +3,13 @@
 本文件是仓库的**权威维护指引**，GitHub Copilot、本地 agent（pi / Claude Code 等）会自动读取。
 核心原则：**内容全部通过编辑 `app/data/*.ts` 维护，不修改组件与样式（除非有明确需求）**。
 
+## 🌐 中英文双语
+
+- 内容数据在 `app/data/content.ts` 中每个数组都有 **En 与 Zh 两份**（如 `about` / `aboutZh`、`news` / `newsZh`、`representativePublications` / `representativePublicationsZh` 等），修改一处时**务必同步更新另一份**
+- 界面文案（导航、区块标题、按钮、侧栏 bio/描述）在 `app/data/i18n.ts` 的 `messages` 字典中（`en` / `zh` 两套）
+- 语言切换：顶栏右侧按钮（`useLocale` composable，localStorage 持久化）
+- 论文标题/作者/venue 保持英文原文，中英共用（`otherPublications` 无需 Zh 副本）；可译内容（简介/描述）才需要双语
+
 ## 项目概览
 
 - **技术栈**：Nuxt 4（SSG，`app/` 目录结构）+ TypeScript + @nuxt/ui v4 + Tailwind CSS v4
@@ -54,7 +61,8 @@ google_scholar_crawler/ ← 引用数据爬虫（由 Action 运行，不要改�
 - 引用数自动填充：填 `scholarId`（Google Scholar 论文 ID），显示为 "Citations: N"
 
 > 主页只显示 `representativePublications` 卡片 + 「View All Publications」入口，
-> 完整列表在 `/publications` 页面（导航 Publications 跳转）。
+> 完整列表在 `/publications` 页面（导航 Publications 跳转）；
+> 实习经历在独立页 `/internships`；其余区块（News/Honors/Education/Talks）在首页锚点区。
 
 ### 4. 其他时间线（荣誉/教育/讲座/实习）
 
