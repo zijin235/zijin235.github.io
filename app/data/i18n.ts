@@ -6,6 +6,7 @@ export const messages: Record<Locale, Record<string, string>> = {
     'nav.about': 'About',
     'nav.publications': 'Publications',
     'nav.internships': 'Internships',
+    'nav.cv': 'CV',
 
     'site.bio': 'M.S. Student · NUAA',
     'site.description': 'Research interests: AI Security and Agent Security',
@@ -38,6 +39,7 @@ export const messages: Record<Locale, Record<string, string>> = {
     'nav.about': '个人简介',
     'nav.publications': '论文',
     'nav.internships': '实习',
+    'nav.cv': '简历',
 
     'site.bio': '硕士研究生 · 南航',
     'site.description': '研究方向：AI 安全与 Agent 安全',

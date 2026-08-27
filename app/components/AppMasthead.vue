@@ -10,6 +10,7 @@ const items = computed<NavigationMenuItem[]>(() => [
   { label: t('nav.about'), to: '/' },
   { label: t('nav.publications'), to: '/publications' },
   { label: t('nav.internships'), to: '/internships' },
+  { label: t('nav.cv'), to: '/cv' },
 ])
 </script>
 

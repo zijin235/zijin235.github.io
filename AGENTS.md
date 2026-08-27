@@ -62,7 +62,8 @@ google_scholar_crawler/ ← 引用数据爬虫（由 Action 运行，不要改�
 
 > 主页只显示 `representativePublications` 卡片 + 「View All Publications」入口，
 > 完整列表在 `/publications` 页面（导航 Publications 跳转）；
-> 实习经历在独立页 `/internships`；其余区块（News/Honors/Education/Talks）在首页锚点区。
+> 实习经历在独立页 `/internships`；顶部导航仅保留 About（首页）/ Publications / Internships，
+> News/Honors/Education/Talks 均在首页内容区（滚动查看，无独立页）。
 
 ### 4. 其他时间线（荣誉/教育/讲座/实习）
 
